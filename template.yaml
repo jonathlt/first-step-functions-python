@@ -5,10 +5,10 @@ Description: Sample AWS Step Function app
 Globals:
 
     Function:
-        Runtime: nodejs10.x
+        Runtime: python3.7
         Timeout: 30
         Tags:
-            Project: GreetByName
+            Project: GreetByNamePython
 
 Resources:
 
@@ -100,7 +100,7 @@ Resources:
                                 Resource: 
                                     - !Ref ResultTopic
 
-    GreetByNameStateMachine:
+    GreetByNameStateMachinePython:
         Type: "AWS::StepFunctions::StateMachine"
         Properties:
             RoleArn: !GetAtt StepFunctionsServiceRole.Arn
@@ -143,7 +143,7 @@ Resources:
                                         "DataType": "String",
                                         "StringValue": "value of my attribute no 1"
                                     },
-                                    "Attr ibute2": {
+                                    "Attribute2": {
                                         "DataType": "String",
                                         "StringValue": "value of my attribute no 2"
                                     }
